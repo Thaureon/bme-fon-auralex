@@ -5,7 +5,6 @@ Median of Two Sorted Arrays
 - Output: double
 
 ## Solutions
-Using  the same solution, the problem was converted to each language below.
 - C#
     - FileName: CSharpSolution.cs
     - Notes:
