@@ -27,21 +27,21 @@ Using  the same solution, the problem was converted to each language below.
         - ToString method does not exist on string class as callable method, String.valueOf or Integer.toString should be used.
         - Strings are not accessible as char arrays like c# or C++, so charAt(pos) is needed to get character at a position.
 - JavaScript
-    - FileName: JavaScriptSolution.java
+    - FileName: JavaScriptSolution.js
     - Notable differences:
         - length is a property in JavaScript while it is a method in other languages.
         - ToString method does exists, but ints can be converted with just "'' + x".
         - Strings can be accessed like a char arrays, so s[pos] get the character at a position.
         - var identifies a variable not a type as JavaScript is not type safe.
 - TypeScript
-    - FileName: TypeScriptSolution.java
+    - FileName: TypeScriptSolution.ts
     - Notable differences:
         - TypeScript is built on top of JavaScript, the intention was to add type safety.
         - let and var both identify variables in TypeScript/JavaScript.  The difference is scope.
         - Type is specified before setting the variable. "let s: string" sets s as a string.  One thing this does is allow compilers to more easily identify errors.
         - Methods and functions that work in javascript work in TypeScript as well.
 - Python3
-    - FileName: Python3Solution.java
+    - FileName: Python3Solution.py
     - Notable differences:
         - Methods use Camel Case
         - length is the method len(string), shortening from full name of length
