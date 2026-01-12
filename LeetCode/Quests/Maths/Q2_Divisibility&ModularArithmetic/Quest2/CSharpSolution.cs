@@ -1,17 +1,24 @@
 public class Solution {
-    public int PivotInteger(int n) {
-        var pivotN = (n * (n+1))/2;
-
-        var pivotValue = -1;
-        for(int i = 1; i <= n; i++)
+    public int SmallestRepunitDivByK(int k) {
+        if(k % 2 == 0 || k % 5 == 0)
         {
-            var pivotI = (i * (i+1))/2;
-            if(pivotI == (pivotN + i)/2.0)
-            {
-                pivotValue = i;
-                break;
-            }
+            return -1;
         }
-        return pivotValue;
+
+        var totalDigits = 1;
+        var rem = 1;
+
+        while (rem % k != 0)
+        {
+            totalDigits++;
+            rem = (rem * 10 + 1) % k;
+        }
+
+        return totalDigits;
+    }
+
+    public bool IsPrime(int k)
+    {
+        return true;
     }
 }

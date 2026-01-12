@@ -25,6 +25,9 @@ Smallest Integer Divisible by K
 - This would work if I had to get all of the primes, but if just given k. This might be excessive.
 - I could go up, but it feels like there should be a formula for this.
 - It feels like every odd digit except multiples of 5 would give a result.
+- Using hint 1 and 2 and looking at the comments helped to understand the math behind it.
+- Hint 1 was not very understandable without the comments
+- Hint 2 makes sense if you exclude values that will never be able to get to the end like multiples of 2 and 5.
 
 ## Solutions
 - C#
@@ -32,10 +35,11 @@ Smallest Integer Divisible by K
     - Notes:
         - Initial solution with just adding digits to n until solution is found, time limit exceeded issue.
         - This solution does give the correct answers, but can take a while.
+        - Initial solution was working, but needed minor tweeks to make sure that the remainer keeps itself down below what would be max.
 
 
 ## Statistics
 According to LeetCode Runtime Analysis.
 - C#
     - Runtime - 1 MS
-    - Memory - 29.28 MB
+    - Memory - 29.41 MB
