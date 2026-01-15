@@ -1,24 +1,35 @@
 public class Solution {
-    public int SmallestRepunitDivByK(int k) {
-        if(k % 2 == 0 || k % 5 == 0)
+    public IList<IList<int>> Generate(int numRows) {
+        var allPascalRows = new List<IList<int>>();
+
+		var previousRow = new int[1] { 1};
+        allPascalRows.Add(previousRow.ToList());
+
+        for(var i = 2; i <= numRows; i++)
         {
-            return -1;
-        }
+            var currentRow = new int[i];
+            for(var j = 0; j < i; j++)
+            {
+                var previous = j - 1;
+                var next = j;
+                if(previous < 0)
+                {
+                    currentRow[j] = previousRow[next];
+                }
+                else if(next >= previousRow.Length)
+                {
+                    currentRow[j] = previousRow[previous];
+                }
+                else
+				{
+					currentRow[j] = previousRow[previous] + previousRow[next];
+				}
+			}
 
-        var totalDigits = 1;
-        var rem = 1;
+			previousRow = currentRow;
+			allPascalRows.Add(previousRow.ToList());
+		}
 
-        while (rem % k != 0)
-        {
-            totalDigits++;
-            rem = (rem * 10 + 1) % k;
-        }
-
-        return totalDigits;
-    }
-
-    public bool IsPrime(int k)
-    {
-        return true;
-    }
+		return allPascalRows;
+	}
 }
