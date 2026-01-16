@@ -35,7 +35,11 @@ Number of Ways to Rearrange Sticks With K Sticks Visible
 - C#
     - FileName: CSharpSolution.cs
     - Notes:
-        - 
+        - This was pure math that I apparently was not able to figure out without hints.
+        - The logic is similar to the step count problem but with more complex possibilities.
+        - I still don't completely understand this problem.
+        - The solution I was trying was getting the left permutations and the right permutations.
+        - While some are easy to figure out, others didn't give me a valid list due to int max being 2 billion and modulus only being 1 billion.
 
 
 ## Statistics
