@@ -1,30 +1,27 @@
 # LeetCode Divisbility & Modular Arithmetic
 ## Quiz
 Simple Bank System
-- Input: string[] transaction names, int[][] transactions
-- Output: bool? []
+- Input: int n, int k
+- Output: `IList<IList<int>>`
 
 ## Thought Process
-- 4 total methods need to be created
-    - Bank setup.  This creates the bank with the account position and ammount.
-    - Transfer.  This moves money from one account to another account
-    - Deposit.  This adds money to the specified account.
-    - Withdraw.  This tries to remove money from the specified account.
-- Transfer, Deposit, and Withdraw fail if account does not exist.
-- Transfer, Withdraw fail if ammount is more than in account.
-- The flow of this is straight forward in a sense of only these situations need to be checked.
+- return each permutation from 1 to n of length k.
+- Holding each value in a list, only adding those that have a length shorter than k
+- if there are still values afterwards that would allow another list of length k, add another value to that list.
+    - IE. n=4, k=2: 1 gets added at 1, 2 adds [1,2], [2], and [1] since there is still more digits after 2 that would have a pair with it.
+    - This logic would allow [1,2] to be added as [1,2,3] and [1,2] when 3 is there.
+- This might be better as a queue or stack since we would constantly be adding and removing from that list to get the final list.
 
 ## Solutions
 - C#
     - FileName: CSharpSolution.cs
     - Notes:
-        - Implementations was simple except for desired accounts were not the same as added accounts.
-        - Accounts being added were 0 based, but access to accounts was 1 based.
-        - This required the shift from 1 based to 0 based for transfer, deposit, and withdraw.
-
+        - Problem was a simple test of making sure that each set of digits that can be added would be added
+        - Copying a list to a new list was not what I thought it was originally, I forgot it was just passing in the old list into a new list as a parameter.
+        - I thought list had Length similar to arrays, but it seems they only have Count.  This caused some errors because of this.
 
 ## Statistics
 According to LeetCode Runtime Analysis.
 - C#
-    - Runtime - 3 MS
-    - Memory - 142.16 MB
+    - Runtime - 49 MS
+    - Memory - 107.20 MB
