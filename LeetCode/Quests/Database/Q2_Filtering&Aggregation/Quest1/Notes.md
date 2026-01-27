@@ -1,4 +1,4 @@
-# LeetCode SQL 1
+# LeetCode Filtering & Aggregation
 ## Quest 1
 Customer Placing the Largest Number of Orders
 
